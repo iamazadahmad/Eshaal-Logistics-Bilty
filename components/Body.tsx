@@ -7,7 +7,7 @@ import DownloadBillty from "./DownloadBillty";
 export type itemType = {
   quantity: string;
   goods: string;
-  totalWeight: string;
+  actualWeight: string;
 };
 
 export type dataType = {
@@ -19,6 +19,7 @@ export type dataType = {
   from: string;
   to: string;
   vehicleNumber: string;
+  totalWeight: string;
   items: itemType[];
 };
 
@@ -33,12 +34,12 @@ export default function Body() {
     from: "",
     to: "",
     vehicleNumber: "",
+    totalWeight: "",
     items: items,
   });
   useEffect(() => {
     setdata({ ...data, items: items });
   }, [items]);
- 
 
   return (
     <div className="px-2 py-4">
@@ -93,6 +94,13 @@ export default function Body() {
         }}
       />
       <Table items={items} setItems={setItems} />
+      <Input
+        name="Total Weight"
+        placeholder="total weight"
+        onChangeFunc={(e: any) => {
+          setdata({ ...data, totalWeight: e.target.value });
+        }}
+      />
       <Input
         name="Vehicle Number"
         placeholder="vehicle number"

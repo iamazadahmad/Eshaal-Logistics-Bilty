@@ -60,6 +60,7 @@ export default function DownloadBillty({
         from: data.from ?? "",
         to: data.to ?? "",
         vehicleNumber: data.vehicleNumber ?? "",
+        totalWeight: data.totalWeight ?? "",
         items: itemsWithSno,
       };
 

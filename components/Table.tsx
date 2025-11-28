@@ -22,7 +22,7 @@ export default function Table({
     const converted: itemType[] = updatedRows.map((r) => ({
       quantity: r.col1,
       goods: r.col2,
-      totalWeight: r.col3,
+      actualWeight: r.col3,
     }));
 
     setItems(converted);
@@ -64,7 +64,7 @@ export default function Table({
           <tr className="bg-gray-200">
             <th className="border p-2">Quantity</th>
             <th className="border p-2">Goods</th>
-            <th className="border p-2">Weights</th>
+            <th className="border p-2">Actual Weights</th>
             <th className="border p-2">Action</th>
           </tr>
         </thead>
